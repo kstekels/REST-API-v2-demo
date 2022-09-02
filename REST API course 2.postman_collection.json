@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "bf0451c1-69fc-4df1-9d9d-b364b413277c",
+		"name": "REST API course 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14519612"
+	},
+	"item": [
+		{
+			"name": "/items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIxMjM5MzUsImlhdCI6MTY2MjEyMzYzNSwibmJmIjoxNjYyMTIzNjM1LCJpZGVudGl0eSI6MX0.jYuV_JEFQ-TyPcuT4GrhDm4k1Xms_4ERGdqO6vJXIKc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/items",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"items"
+					]
+				},
+				"description": "This should return list of items, each in JSON format."
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIxMjYzMTMsImlhdCI6MTY2MjEyNjAxMywibmJmIjoxNjYyMTI2MDEzLCJpZGVudGl0eSI6MX0.UX7vKB8E0OavXqDG2cpCMn-jJ5UnkeICaAKBv85ChaQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/item/desk",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item",
+						"desk"
+					]
+				},
+				"description": "This will return one specific item, uniquely identified by its name. No two items have the same name."
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIxMjM5MzUsImlhdCI6MTY2MjEyMzYzNSwibmJmIjoxNjYyMTIzNjM1LCJpZGVudGl0eSI6MX0.jYuV_JEFQ-TyPcuT4GrhDm4k1Xms_4ERGdqO6vJXIKc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 1500.99\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/item/<name>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item",
+						"<name>"
+					]
+				},
+				"description": "This will create a new item. If item already exist, it will fail."
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIxMjM5MzUsImlhdCI6MTY2MjEyMzYzNSwibmJmIjoxNjYyMTIzNjM1LCJpZGVudGl0eSI6MX0.jYuV_JEFQ-TyPcuT4GrhDm4k1Xms_4ERGdqO6vJXIKc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 14001.99,\n    \"another\": 1\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/item/<name>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item",
+						"<name>"
+					]
+				},
+				"description": "This will create a new item. If item already exist, it will update existing item."
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjIxMjM5MzUsImlhdCI6MTY2MjEyMzYzNSwibmJmIjoxNjYyMTIzNjM1LCJpZGVudGl0eSI6MX0.jYuV_JEFQ-TyPcuT4GrhDm4k1Xms_4ERGdqO6vJXIKc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/item/<name>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"item",
+						"<name>"
+					]
+				},
+				"description": "Delete the item, identified by name."
+			},
+			"response": []
+		},
+		{
+			"name": "/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"karlis\",\n    \"password\": \"qwerty\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
